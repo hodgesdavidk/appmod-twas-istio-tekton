@@ -16,7 +16,7 @@ items:
   spec:
     params:
     - name: revision
-      value: master
+      value: main
     - name: url
       value: https://github.com/hodgesdavidk/appmod-twas-istio-tekton.git
     type: git
