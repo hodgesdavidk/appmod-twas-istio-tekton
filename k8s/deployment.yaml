@@ -11,6 +11,8 @@ spec:
       app: customerorderservicesapp
   template:
     metadata:
+      annotations:
+        sidecar.istio.io/inject: "true"
       labels:
         app: customerorderservicesapp
     spec:
