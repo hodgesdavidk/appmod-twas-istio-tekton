@@ -14,6 +14,10 @@ spec:
         description: The directory in source that contains yaml manifests
         type: string
         default: "k8s"
+      - name: mesh_dir
+        description: Directory that defines istio networking
+        type: string
+        default: "istio"
 
   steps:
     - name: apply
@@ -32,4 +36,7 @@ spec:
           echo -----------------------------------
           echo Applying manifests in $(inputs.params.manifest_dir) directory
           oc apply -f $(inputs.params.manifest_dir)
+          echo -----------------------------------
+          echo Applying istio networking configuration in $(inputs.params.mesh_dir) directory
+          oc apply -f $(inputs.params.mesh_dir)
           echo -----------------------------------
